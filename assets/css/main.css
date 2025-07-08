@@ -180,7 +180,6 @@ h6 {
 }
 
 .header .logo img {
-
 }
 
 .header .logo svg {
@@ -1849,14 +1848,14 @@ section,
   background: linear-gradient(
     135deg,
     var(--accent-color),
-    color-mix(in srgb, var(--accent-color), blue 20%)
+    color-mix(in srgb, var(--accent-color), #334f5b 30%)
   );
   color: var(--contrast-color);
   padding: 15px 25px;
   border-radius: 25px;
   font-size: 24px;
   font-weight: 800;
-  box-shadow: 0 4px 20px rgba(54, 144, 231, 0.3);
+  box-shadow: 0 4px 20px #aa907236;
 }
 
 .featured-properties
@@ -1887,7 +1886,7 @@ section,
   background: linear-gradient(
     135deg,
     var(--accent-color),
-    color-mix(in srgb, var(--accent-color), blue 20%)
+    color-mix(in srgb, var(--accent-color), #334f5b 30%)
   );
   color: var(--contrast-color);
   padding: 14px 28px;
@@ -1898,7 +1897,7 @@ section,
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(54, 144, 231, 0.3);
+  box-shadow: 0 4px 15px #aa907236;
 }
 
 .featured-properties
@@ -2066,7 +2065,7 @@ section,
   background: linear-gradient(
     135deg,
     var(--accent-color),
-    color-mix(in srgb, var(--accent-color), blue 20%)
+    color-mix(in srgb, var(--accent-color), #334f5b 30%)
   );
 }
 
@@ -2267,8 +2266,8 @@ section,
   .property-card-horizontal
   .property-image-horizontal
   .property-badge-horizontal.exclusive {
-    background: linear-gradient(135deg, #3a4e49, #52776e);
-    box-shadow: 0 4px 15px #3a4e49;
+  background: linear-gradient(135deg, #3a4e49, #52776e);
+  box-shadow: 0 4px 15px #3a4e49;
 }
 
 .featured-properties
@@ -4563,7 +4562,7 @@ section,
   background: linear-gradient(
     135deg,
     var(--accent-color),
-    color-mix(in srgb, var(--accent-color), #0066cc 20%)
+    color-mix(in srgb, var(--accent-color), #334f5b 30%)
   );
   border: none;
   border-radius: 8px;
@@ -4751,7 +4750,7 @@ section,
   background: linear-gradient(
     135deg,
     var(--accent-color),
-    color-mix(in srgb, var(--accent-color), #0066cc 20%)
+    color-mix(in srgb, var(--accent-color), #334f5b 30%)
   );
   color: white;
 }
@@ -5894,7 +5893,7 @@ section,
   background: linear-gradient(
     135deg,
     var(--accent-color),
-    color-mix(in srgb, var(--accent-color), #6a11cb 30%)
+    color-mix(in srgb, var(--accent-color), #334f5b 30%)
   );
   padding: 25px;
   border-radius: 20px;
