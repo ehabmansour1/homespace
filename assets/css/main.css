@@ -10594,3 +10594,421 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/*--------------------------------------------------------------
+# Login & Register Pages
+--------------------------------------------------------------*/
+.login-page,
+.register-page {
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+
+.login,
+.register {
+  padding: 80px 0;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+}
+
+/* Form Wrapper */
+.login-form-wrapper,
+.register-form-wrapper {
+  padding: 60px 50px;
+  background-color: var(--surface-color);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-header,
+.register-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-header h1,
+.register-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.login-header p,
+.register-header p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Form Styles */
+.login-form,
+.register-form {
+  width: 100%;
+}
+
+/* Form Sections */
+.form-section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  width: 100%;
+  padding: 15px 20px 15px 50px;
+  border: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: var(--default-color);
+  background-color: var(--surface-color);
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.form-control::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.input-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  z-index: 2;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  cursor: pointer;
+  padding: 5px;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+  color: var(--accent-color);
+}
+
+/* Form Options */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  border: 2px solid color-mix(in srgb, var(--default-color), transparent 60%);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.form-check-label {
+  font-size: 0.9rem;
+  color: var(--default-color);
+  cursor: pointer;
+}
+
+.form-check-label a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.form-check-label a:hover {
+  text-decoration: underline;
+}
+
+.forgot-password {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn-login,
+.btn-register {
+  width: 100%;
+  padding: 15px 30px;
+  background: linear-gradient(
+    135deg,
+    var(--accent-color) 0%,
+    color-mix(in srgb, var(--accent-color), transparent 20%) 100%
+  );
+  color: var(--contrast-color);
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px
+    color-mix(in srgb, var(--accent-color), transparent 30%);
+}
+
+.btn-login i,
+.btn-register i {
+  transition: transform 0.3s ease;
+}
+
+.btn-login:hover i,
+.btn-register:hover i {
+  transform: translateX(5px);
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  margin: 30px 0;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.divider span {
+  background-color: var(--surface-color);
+  padding: 0 20px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Social Login */
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.btn-social {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 12px;
+  background-color: var(--surface-color);
+  color: var(--default-color);
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+  border-color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 5%);
+  color: var(--accent-color);
+}
+
+.btn-google:hover {
+  border-color: #ea4335;
+  color: #ea4335;
+  background-color: white;
+}
+
+.btn-facebook:hover {
+  border-color: #1877f2;
+  color: #1877f2;
+  background-color: white;
+}
+
+/* Links */
+.signup-link,
+.login-link {
+  text-align: center;
+}
+
+.signup-link p,
+.login-link p {
+  margin: 0;
+  color: var(--default-color);
+}
+
+.signup-link a,
+.login-link a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-link a:hover,
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .login-form-wrapper,
+  .register-form-wrapper {
+    padding: 40px 30px;
+  }
+
+  .form-section {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login,
+  .register {
+    padding: 40px 0;
+  }
+
+  .login-form-wrapper,
+  .register-form-wrapper {
+    padding: 30px 20px;
+  }
+
+  .login-header h1,
+  .register-header h1 {
+    font-size: 2rem;
+  }
+
+  .form-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .login-form-wrapper,
+  .register-form-wrapper {
+    padding: 25px 15px;
+  }
+
+  .login-header h1,
+  .register-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-control {
+    padding: 12px 15px 12px 45px;
+  }
+
+  .input-icon {
+    left: 15px;
+  }
+
+  .btn-login,
+  .btn-register {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n + 3),
+.input-group:not(.has-validation)
+  > .form-floating:not(:last-child)
+  > .form-control,
+.input-group:not(.has-validation)
+  > .form-floating:not(:last-child)
+  > .form-select,
+.input-group:not(.has-validation)
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
+    .form-floating
+  ) {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
