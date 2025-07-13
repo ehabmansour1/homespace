@@ -7330,6 +7330,7 @@ section,
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+  flex-direction: column-reverse;
 }
 
 .services .service-block:hover {
@@ -7457,7 +7458,7 @@ section,
 }
 
 .services .service-image {
-  width: 280px;
+  width: 100%;
   height: 200px;
   border-radius: 20px;
   overflow: hidden;
@@ -7613,7 +7614,6 @@ section,
 
 @media (max-width: 992px) {
   .services .service-block {
-    flex-direction: column !important;
     text-align: center;
     gap: 30px;
   }
@@ -11011,4 +11011,443 @@ section,
   ) {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
+}
+.reservation-page {
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+
+.reservation-header {
+  background: linear-gradient(
+    135deg,
+    var(--accent-color) 0%,
+    color-mix(in srgb, var(--accent-color), transparent 20%) 100%
+  );
+  padding: 2rem 0;
+  color: var(--contrast-color);
+}
+
+.reservation-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reservation-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--contrast-color);
+}
+
+.currency-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+}
+
+.currency-toggle span {
+  font-weight: 600;
+  color: var(--contrast-color);
+}
+
+.reservation-container {
+  padding: 2rem 0;
+}
+
+.reservation-card {
+  background: var(--surface-color);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.asset-value-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.asset-value-label {
+  font-size: 0.9rem;
+  color: var(--default-color);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.asset-value-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.ownership-input {
+  background: var(--surface-color);
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  width: 100%;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.ownership-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(170, 144, 114, 0.1);
+}
+
+.ownership-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ownership-btn {
+  background: var(--surface-color);
+  border: 2px solid #e9ecef;
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  color: var(--default-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ownership-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.ownership-btn.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.payment-plan-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 1rem;
+}
+
+.plan-tab {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: var(--default-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.plan-tab:hover {
+  background: rgba(170, 144, 114, 0.1);
+  color: var(--accent-color);
+}
+
+.plan-tab.active {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.payment-terms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.payment-term {
+  background: var(--surface-color);
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.payment-term-label {
+  font-size: 0.9rem;
+  color: var(--default-color);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.payment-term-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.agreement-section {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.agreement-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.agreement-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 0.25rem;
+  accent-color: var(--accent-color);
+}
+
+.agreement-checkbox label {
+  font-size: 1rem;
+  color: var(--default-color);
+  line-height: 1.5;
+}
+
+.agreement-checkbox label a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.agreement-checkbox label a:hover {
+  text-decoration: underline;
+}
+
+.reserve-btn {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  width: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.reserve-btn:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-2px);
+}
+
+.reserve-btn:disabled {
+  background: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.notice-section {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  border: 1px solid #ffc107;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.notice-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #856404;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.notice-text {
+  color: #856404;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.custom-payment-section {
+  background: var(--surface-color);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.custom-payment-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.custom-tab {
+  background: transparent;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: var(--default-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.custom-tab:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.custom-tab.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.payment-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.payment-date {
+  flex: 1;
+  background: var(--surface-color);
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.payment-amount {
+  flex: 2;
+  background: var(--surface-color);
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.conditions-list {
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.conditions-list h4 {
+  color: #c53030;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.conditions-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.conditions-list li {
+  color: #c53030;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.conditions-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #c53030;
+  font-weight: bold;
+}
+
+.next-payment-btn {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  width: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.next-payment-btn:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .reservation-header .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .reservation-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .asset-value-amount {
+    font-size: 2rem;
+  }
+
+  .ownership-buttons {
+    justify-content: center;
+  }
+
+  .payment-plan-tabs,
+  .custom-payment-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .payment-terms {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-row {
+    flex-direction: column;
+  }
+
+  .payment-date,
+  .payment-amount {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .reservation-card {
+    padding: 1.5rem;
+  }
+
+  .asset-value-section {
+    padding: 1.5rem;
+  }
+
+  .ownership-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .plan-tab,
+  .custom-tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
 }
