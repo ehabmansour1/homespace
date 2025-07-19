@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #222;
+        margin: 0;
+      }
+      #main-image {
+        max-width: 400px;
+        max-height: 400px;
+        border-radius: 8px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+      }
+      #gallery-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      #gallery-modal.active {
+        display: flex;
+      }
+      #gallery-viewer {
+        position: relative;
+        display: inline-block;
+      }
+      #gallery-image {
+        max-width: 80vw;
+        max-height: 80vh;
+        border-radius: 8px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+        cursor: pointer;
+      }
+      .arrow {
+        display: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2.5rem;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.3);
+        border: none;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 2;
+        user-select: none;
+      }
+      #arrow-left {
+        left: -60px;
+      }
+      #arrow-right {
+        right: -60px;
+      }
+      #gallery-viewer.show-arrows .arrow {
+        display: flex;
+      }
+      #close-modal {
+        position: absolute;
+        top: 24px;
+        right: 32px;
+        font-size: 2rem;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      id="main-image"
+      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+      alt="Image"
+    />
+    <div id="gallery-modal">
+      <div id="gallery-viewer">
+        <button class="arrow" id="arrow-left">&#8592;</button>
+        <img id="gallery-image" src="" alt="Gallery Image" />
+        <button class="arrow" id="arrow-right">&#8594;</button>
+      </div>
+      <button id="close-modal">&times;</button>
+    </div>
+    <script>
+      const images = [
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
+      ];
+      let current = 0;
+      const mainImage = document.getElementById("main-image");
+      const galleryModal = document.getElementById("gallery-modal");
+      const galleryViewer = document.getElementById("gallery-viewer");
+      const galleryImage = document.getElementById("gallery-image");
+      const arrowLeft = document.getElementById("arrow-left");
+      const arrowRight = document.getElementById("arrow-right");
+      const closeModal = document.getElementById("close-modal");
+
+      function showGalleryImage(idx) {
+        current = (idx + images.length) % images.length;
+        galleryImage.src = images[current];
+      }
+
+      mainImage.addEventListener("click", (e) => {
+        galleryModal.classList.add("active");
+        galleryViewer.classList.add("show-arrows");
+        showGalleryImage(current);
+      });
+
+      arrowLeft.addEventListener("click", (e) => {
+        e.stopPropagation();
+        showGalleryImage(current - 1);
+      });
+      arrowRight.addEventListener("click", (e) => {
+        e.stopPropagation();
+        showGalleryImage(current + 1);
+      });
+
+      closeModal.addEventListener("click", () => {
+        galleryModal.classList.remove("active");
+        galleryViewer.classList.remove("show-arrows");
+      });
+      galleryModal.addEventListener("click", (e) => {
+        if (e.target === galleryModal) {
+          galleryModal.classList.remove("active");
+          galleryViewer.classList.remove("show-arrows");
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && galleryModal.classList.contains("active")) {
+          galleryModal.classList.remove("active");
+          galleryViewer.classList.remove("show-arrows");
+        }
+      });
+
+      mainImage.src = images[0];
+    </script>
+  </body>
+</html>
